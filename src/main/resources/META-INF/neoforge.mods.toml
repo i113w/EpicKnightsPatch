@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+displayURL = "https://github.com/yourusername/epic-knights-patch"
+
+[[dependencies.epic_knights_patch]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.epic_knights_patch]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+# 关键：必须在magistuarmory之前加载
+[[dependencies.epic_knights_patch]]
+modId = "magistuarmory"
+type = "optional"
+versionRange = "[1.0,)"
+ordering = "BEFORE"
+side = "BOTH"
